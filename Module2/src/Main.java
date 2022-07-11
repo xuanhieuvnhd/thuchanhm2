@@ -32,9 +32,9 @@ public class Main implements Serializable {
                 case 3 -> quanLySanPham.suaSanPham(scanner);
                 case 4 -> quanLySanPham.xoaSanPham(scanner);
                 case 5 -> quanLySanPham.sapXepSanPham();
-                case 6 -> quanLySanPham.timSanPham(scanner);
+                case 6 -> quanLySanPham.timSanPham();
                 case 7 -> quanLySanPham.docTaiLieu();
-                case 8 -> quanLySanPham.ghiTaiLieu();
+//                case 8 -> quanLySanPham.ghiTaiLieu();
                 case 9 -> System.exit(9);
             }
         }

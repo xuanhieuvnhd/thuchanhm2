@@ -14,8 +14,7 @@ public class QuanLySanPham implements Serializable {
             System.err.println();
         }
     }
-    public void ghiTaiLieu(){
-        ArrayList<SanPham>sanPhams = new ArrayList<>();
+    public void ghiTaiLieu(ArrayList<SanPham>sanPhams){
         try {
             if (!file.exists()) {
                 file.createNewFile();
@@ -56,7 +55,7 @@ public class QuanLySanPham implements Serializable {
         SanPham sanPham = taoSanPham(scanner);
         sanPhams.add(sanPham);
         System.out.println("Them san pham thanh cong !");
-        ghiTaiLieu();
+        ghiTaiLieu(sanPhams);
     }
     public void hienTatCa(){
         boolean check = false;
@@ -88,7 +87,7 @@ public class QuanLySanPham implements Serializable {
                 sanPhams.get(i).setGia(gia);
                 sanPhams.get(i).setSoluong(soluong);
                 sanPhams.get(i).setMota(mota);
-                ghiTaiLieu();
+                ghiTaiLieu(sanPhams);
             }
         }
         if (!check) {
@@ -102,7 +101,7 @@ public class QuanLySanPham implements Serializable {
         for (int i = 0; i < sanPhams.size(); i++){
             if (sanPhams.get(i).getMa() == ma){
                 sanPhams.remove(i);
-                ghiTaiLieu();
+                ghiTaiLieu(sanPhams);
                 check = true;
             }
         }
@@ -113,8 +112,15 @@ public class QuanLySanPham implements Serializable {
     public void sapXepSanPham(){
 
     }
-    public void timSanPham(Scanner scanner){
-        boolean check = false;
-        System.out.print("Nhap ");
+    public void timSanPham(){
+       double max = 0;
+       int k = 0;
+        for (int i=0;i<sanPhams.size();i++){
+            if (max<sanPhams.get(i).getGia()){
+                max = sanPhams.get(i).getGia();
+                k=i;
+            }
+        }
+        System.out.println(sanPhams.get(k));
     }
 }
