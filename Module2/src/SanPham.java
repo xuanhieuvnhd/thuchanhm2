@@ -1,4 +1,6 @@
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
     int ma;
     String ten;
     double gia;
