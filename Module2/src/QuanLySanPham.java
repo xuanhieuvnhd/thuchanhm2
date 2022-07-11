@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class QuanLySanPham implements Serializable {
@@ -117,9 +118,23 @@ public class QuanLySanPham implements Serializable {
             System.err.println("Khong tim thay San Pham !");
         }
     }
+    Comparator<SanPham> compareUp = new Comparator<>() {
+        @Override
+        public int compare(SanPham o1, SanPham o2) {
+            return (int) (o1.getGia() - o2.getGia());
+        }
+    };
 
+    Comparator<SanPham> compareDown = new Comparator<SanPham>() {
+        @Override
+        public int compare(SanPham o1, SanPham o2) {
+            return (int) (o1.getGia() - o2.getGia());
+        }
+    };
     public void sapXepSanPham() {
-
+        System.out.println("Sap xep tang dan");
+        sanPhams.sort(compareUp);
+        hienTatCa();
     }
 
     public void timSanPham() {

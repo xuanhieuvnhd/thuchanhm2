@@ -13,8 +13,8 @@ public class Main implements Serializable {
             System.out.println("|       1. Xem danh sach san pham             ");
             System.out.println("|       2. Them moi san pham         ");
             System.out.println("|       3. Cap nhat san pham  ");
-            System.out.println("|       4. Xoa san pham            ");
-            System.out.println("|       5. Sap xep san pham         ");
+            System.out.println("|       4. Xoa san pham bang ma            ");
+            System.out.println("|       5. Sap xep san pham theo gia        ");
             System.out.println("|       6. Tim kiem san pham co gia cao nhat            ");
             System.out.println("|       7. Doc tu file        ");
             System.out.println("|       8. Ghi vao file            ");
